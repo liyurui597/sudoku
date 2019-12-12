@@ -1,0 +1,59 @@
+TypeScript
+概述   JavaScript 超集，提供了可选的静态类型和基于接口的OOP
+stranspile
+traslate compile 转译
+
+特点
+静态类型：接口、类、泛型、枚举、类型推导
+模块：ES6、命名空间
+编译：.ts --[tsc (TypeScript Compiler)] -->/.js
+
+程序目录结构
+1、~/(案例代码根目录)
+ 1.1、src(前端源文件目录，保存构建相关文件) package.json webpack.config.js  gulpfile.js
+      1.1.1、js(脚本源文件目录)
+      1.1.2、less(LESS源文件目录)
+ 1.2、www(发布目录，保存本案例仅有的一个HTML:index.html)
+       1.2.1、css(编译出来的css文件)
+       1.2.2、js(编译出来的js文件)
+
+数据结构
+aRow = matrix[i]
+aCell = aRow[j]
+
+1 - 9,0- 空白 (注：js中0,"",null,underfind判断为false)
+
+游戏算法
+生成算法
+ 不可避免会采用递归
+采用一个简单的算法，从数字1开始
+失败重算
+随机位置，采用Fisher-Yates洗牌算法
+
+检查算法  行 列 宫
+ 数据抽取  array as result
+       抽取行数据  
+       抽取列数据
+       抽取宫数据，寻找关系
+eg:坐标：bx=n%3=2  by=n/3=1
+起始格坐标：x0=bx*3=6  y0=by*3=3
+宫内小格坐标:x=x0+i%3   y=y0+i/3
+       序号：i
+array = [1,2,3,4,5,6,7,8,9]
+array.join(""):"123456789"检查是否相等
+
+
+脚本目录结构
+~/src/js
+  |---index.js                       页面入口及事件绑定
+  |---toolkit.js                     tookit.js移到core目录下
+  |---core/                    算法及数据结构相关的脚本
+  |       |---toolkit.js              工具方法集
+  |       |---generator.js         生成数独解决方案
+  |       |---checker.js             检查数独解决方案
+  |       |---sudoku.js             生成数独游戏
+  |---ui/                         界面相关的脚本
+  |       |---grid.js                   生成九宫格
+  |       |---popupnumbers.js 处理弹出的操作面板
+
+生成标记
